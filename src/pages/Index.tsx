@@ -216,17 +216,17 @@ const Index = () => {
           </div>
 
           <div className="lg:pl-8 order-1 lg:order-2">
-            <div className="relative">
+            <div className="relative max-w-lg mx-auto">
               <div className="absolute -top-4 -right-4 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-30" />
               <img 
                 src={contractorIndoor} 
                 alt="Contractor showing homeowner project details on tablet" 
-                className="relative rounded-2xl shadow-2xl w-full h-auto"
+                className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
-              <Card className="absolute -bottom-6 -left-6 bg-white shadow-xl max-w-xs">
+              <Card className="absolute -bottom-6 -left-6 bg-white shadow-xl max-w-[240px] hidden sm:block">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-semibold">Kitchen Remodel</h3>
+                    <h3 className="font-semibold text-sm">Kitchen Remodel</h3>
                     <Badge variant="secondary" className="text-primary border-primary/20 text-xs">
                       Live
                     </Badge>
