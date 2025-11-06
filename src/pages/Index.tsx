@@ -15,6 +15,9 @@ import {
   X,
 } from "lucide-react";
 import smartRenoLogo from "@/assets/smartreno-logo.png";
+import contractorIndoor from "@/assets/contractor-homeowner-indoor.png";
+import contractorHandshake1 from "@/assets/contractor-homeowner-handshake-1.png";
+import contractorHandshake2 from "@/assets/contractor-homeowner-handshake-2.png";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -175,8 +178,8 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 lg:px-8 lg:py-24">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="flex flex-col justify-center">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          <div className="flex flex-col justify-center order-2 lg:order-1">
             <Badge variant="secondary" className="w-fit mb-6">
               Renovations, simplified
             </Badge>
@@ -212,43 +215,39 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="lg:pl-8">
-            <Card className="bg-gradient-to-br from-blue-50 to-white border-2 shadow-xl">
-              <CardContent className="p-6">
-                <Card className="bg-white">
-                  <CardContent className="p-5">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="font-semibold text-lg">Kitchen Remodel</h3>
-                      <Badge variant="secondary" className="text-primary border-primary/20">
-                        RFQ · Live
-                      </Badge>
+          <div className="lg:pl-8 order-1 lg:order-2">
+            <div className="relative">
+              <div className="absolute -top-4 -right-4 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-30" />
+              <img 
+                src={contractorIndoor} 
+                alt="Contractor showing homeowner project details on tablet" 
+                className="relative rounded-2xl shadow-2xl w-full h-auto"
+              />
+              <Card className="absolute -bottom-6 -left-6 bg-white shadow-xl max-w-xs">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-semibold">Kitchen Remodel</h3>
+                    <Badge variant="secondary" className="text-primary border-primary/20 text-xs">
+                      Live
+                    </Badge>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2 text-xs">
+                    <div className="text-center">
+                      <div className="font-semibold text-primary">3</div>
+                      <div className="text-muted-foreground">Bids</div>
                     </div>
-                    <div className="grid grid-cols-3 gap-3 mb-4">
-                      <div className="rounded-lg border p-3">
-                        <div className="text-xs text-muted-foreground mb-1">Estimate</div>
-                        <div className="text-sm font-semibold">Scheduled</div>
-                        <div className="text-xs text-muted-foreground">Thu 2:00 PM</div>
-                      </div>
-                      <div className="rounded-lg border p-3">
-                        <div className="text-xs text-muted-foreground mb-1">Proposals</div>
-                        <div className="text-sm font-semibold">3 Received</div>
-                      </div>
-                      <div className="rounded-lg border p-3">
-                        <div className="text-xs text-muted-foreground mb-1">Warranty</div>
-                        <div className="text-sm font-semibold">Optional</div>
-                      </div>
+                    <div className="text-center">
+                      <div className="font-semibold text-primary">Thu</div>
+                      <div className="text-muted-foreground">Estimate</div>
                     </div>
-                    <div className="rounded-lg bg-slate-50 p-3 mb-4 text-xs text-slate-700">
-                      <span className="font-medium">Milestones:</span> Contract → Demo/Beam/Framing
-                      Inspection → Rough-In → Finish → Final Walkthrough
+                    <div className="text-center">
+                      <div className="font-semibold text-primary">✓</div>
+                      <div className="text-muted-foreground">Warranty</div>
                     </div>
-                    <Button className="w-full" variant="secondary">
-                      View sample proposal →
-                    </Button>
-                  </CardContent>
-                </Card>
-              </CardContent>
-            </Card>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -282,6 +281,25 @@ const Index = () => {
             A simple flow designed to reduce surprises and keep your project moving.
           </p>
         </div>
+        
+        {/* Image showcase */}
+        <div className="grid gap-6 md:grid-cols-2 mb-12 max-w-4xl mx-auto">
+          <div className="relative overflow-hidden rounded-2xl shadow-lg">
+            <img 
+              src={contractorHandshake1} 
+              alt="Contractor and homeowner shaking hands at property" 
+              className="w-full h-64 object-cover"
+            />
+          </div>
+          <div className="relative overflow-hidden rounded-2xl shadow-lg">
+            <img 
+              src={contractorHandshake2} 
+              alt="SmartReno contractor meeting with satisfied homeowner" 
+              className="w-full h-64 object-cover"
+            />
+          </div>
+        </div>
+
         <div className="grid gap-6 md:grid-cols-3 mb-8">
           {steps.map((step) => (
             <Card key={step.step} className="hover:shadow-lg transition-shadow">
@@ -339,6 +357,9 @@ const Index = () => {
           <h2 className="text-3xl font-bold tracking-tight lg:text-4xl mb-4">
             Homeowners love the clarity
           </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Real experiences from homeowners who completed their projects with SmartReno.
+          </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
           {testimonials.map((testimonial, idx) => (
