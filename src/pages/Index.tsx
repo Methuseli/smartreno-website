@@ -14,6 +14,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import smartRenoLogo from "@/assets/smartreno-logo.png";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -104,10 +105,9 @@ const Index = () => {
       <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
         <nav className="container mx-auto px-4 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="h-8 w-8 rounded-xl bg-primary" />
-              <span className="text-lg font-semibold tracking-tight">SmartReno</span>
-            </div>
+            <a href="/" className="flex items-center">
+              <img src={smartRenoLogo} alt="SmartReno" className="h-10" />
+            </a>
 
             {/* Desktop Navigation */}
             <div className="hidden items-center gap-8 md:flex">
@@ -428,10 +428,9 @@ const Index = () => {
         <div className="container mx-auto px-4 py-12 lg:px-8">
           <div className="grid gap-8 md:grid-cols-3 mb-8">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-8 w-8 rounded-xl bg-primary" />
-                <span className="text-lg font-semibold">SmartReno</span>
-              </div>
+              <a href="/" className="inline-block mb-4">
+                <img src={smartRenoLogo} alt="SmartReno" className="h-10" />
+              </a>
               <p className="text-sm text-muted-foreground max-w-xs">
                 Renovations made simple for homeowners. Compare bids, manage milestones, and
                 complete your project with confidence.
