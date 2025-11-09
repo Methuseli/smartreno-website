@@ -23,3 +23,18 @@ dist-ssr
 *.sln
 *.sw?
 .env
+.next
+
+# Dependencies
+/node_modules
+
+# Next.js build output
+/.next
+/out
+
+# Local environment variables
+.env.local
+
+# IDE and OS files
+.DS_Store
+.idea

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Ruler,
   Hammer,
@@ -102,6 +103,39 @@ const Index = () => {
       location: "Morris County, NJ",
       quote:
         "The estimator visit was thorough and the contractor we chose was fantastic. Messaging in the app made decisions simple.",
+    },
+  ];
+
+  const userTypes = [
+    {
+      value: "homeowners",
+      label: "Homeowners",
+      description: "Start your renovation project with confidence. Get competitive bids, transparent pricing, and professional oversight from start to finish.",
+      link: "/homeowners",
+    },
+    {
+      value: "contractors",
+      label: "Contractors",
+      description: "Find high-quality, pre-vetted projects in your area. Bid on jobs that match your expertise and grow your business with SmartReno.",
+      link: "/contractors",
+    },
+    {
+      value: "estimators",
+      label: "Estimators",
+      description: "Join our network of professional estimators. Conduct on-site assessments, create detailed project scopes, and help homeowners start their projects right.",
+      link: "/estimators",
+    },
+    {
+      value: "architects",
+      label: "Architects",
+      description: "Collaborate with homeowners and contractors on innovative designs. Bring your architectural visions to life with SmartReno's streamlined platform.",
+      link: "/architects",
+    },
+    {
+      value: "designers",
+      label: "Interior Designers",
+      description: "Partner with us to offer your design expertise to a wide range of renovation projects. Help clients create beautiful, functional spaces.",
+      link: "/designers",
     },
   ];
 
@@ -329,8 +363,46 @@ const Index = () => {
         </div>
       </section>
 
+      {/* User Portals Section */}
+      <section id="portals" className="bg-slate-50 py-16 lg:py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight lg:text-4xl mb-4">
+              Built for Every Role
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Whether you're a homeowner, contractor, or designer, SmartReno provides the tools and resources you need to succeed. Find your portal and discover how we can help you.
+            </p>
+          </div>
+          <Tabs defaultValue="homeowners" className="max-w-4xl mx-auto">
+            <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+              {userTypes.map((userType) => (
+                <TabsTrigger key={userType.value} value={userType.value}>
+                  {userType.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            {userTypes.map((userType) => (
+              <TabsContent key={userType.value} value={userType.value}>
+                <Card className="mt-6">
+                  <CardContent className="p-6 text-center">
+                    <p className="text-lg text-muted-foreground mb-4">
+                      {userType.description}
+                    </p>
+                    <Button asChild>
+                      <a href={userType.link}>Explore the {userType.label} Portal →</a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
+      </section>
+
+
       {/* Features */}
-      <section id="features" className="bg-slate-50 py-16 lg:py-24">
+      <section id="features" className="bg-white py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight lg:text-4xl mb-4">
