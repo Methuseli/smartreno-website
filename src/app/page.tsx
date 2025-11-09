@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -18,6 +19,7 @@ import smartRenoLogo from "@/assets/smartreno-logo.png";
 import contractorIndoor from "@/assets/contractor-homeowner-indoor.png";
 import contractorHandshake1 from "@/assets/contractor-homeowner-handshake-1.png";
 import contractorHandshake2 from "@/assets/contractor-homeowner-handshake-2.png";
+import Image from "next/image";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -109,7 +111,7 @@ const Index = () => {
         <nav className="container mx-auto px-4 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <a href="/" className="flex items-center">
-              <img src={smartRenoLogo} alt="SmartReno" className="h-10" />
+              <Image src={smartRenoLogo} alt="SmartReno" className="h-10 w-auto" />
             </a>
 
             {/* Desktop Navigation */}
@@ -218,7 +220,7 @@ const Index = () => {
           <div className="lg:pl-8 order-1 lg:order-2">
             <div className="relative max-w-lg mx-auto">
               <div className="absolute -top-4 -right-4 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-30" />
-              <img 
+              <Image 
                 src={contractorIndoor} 
                 alt="Contractor showing homeowner project details on tablet" 
                 className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
@@ -285,14 +287,14 @@ const Index = () => {
         {/* Image showcase */}
         <div className="grid gap-6 md:grid-cols-2 mb-12 max-w-4xl mx-auto">
           <div className="relative overflow-hidden rounded-2xl shadow-lg">
-            <img 
+            <Image 
               src={contractorHandshake1} 
               alt="Contractor and homeowner shaking hands at property" 
               className="w-full h-64 object-cover"
             />
           </div>
           <div className="relative overflow-hidden rounded-2xl shadow-lg">
-            <img 
+            <Image 
               src={contractorHandshake2} 
               alt="SmartReno contractor meeting with satisfied homeowner" 
               className="w-full h-64 object-cover"
@@ -450,7 +452,7 @@ const Index = () => {
           <div className="grid gap-8 md:grid-cols-3 mb-8">
             <div>
               <a href="/" className="inline-block mb-4">
-                <img src={smartRenoLogo} alt="SmartReno" className="h-10" />
+                <Image src={smartRenoLogo} alt="SmartReno" className="h-10 w-auto" />
               </a>
               <p className="text-sm text-muted-foreground max-w-xs">
                 Renovations made simple for homeowners. Compare bids, manage milestones, and
