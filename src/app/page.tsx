@@ -15,11 +15,12 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import smartRenoLogo from "@/assets/smartreno-logo.png";
-import contractorIndoor from "@/assets/contractor-homeowner-indoor.png";
-import contractorHandshake1 from "@/assets/contractor-homeowner-handshake-1.png";
-import contractorHandshake2 from "@/assets/contractor-homeowner-handshake-2.png";
 import Image from "next/image";
+
+const smartRenoLogo = "/assets/smartreno-logo.png";
+const contractorIndoor = "/assets/contractor-homeowner-indoor.png";
+const contractorHandshake1 = "/assets/contractor-homeowner-handshake-1.png";
+const contractorHandshake2 = "/assets/contractor-homeowner-handshake-2.png";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -111,7 +112,7 @@ const Index = () => {
         <nav className="container mx-auto px-4 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <a href="/" className="flex items-center">
-              <Image src={smartRenoLogo} alt="SmartReno" className="h-10 w-auto" />
+              <Image src={smartRenoLogo} alt="SmartReno" width={160} height={40} className="h-10 w-auto" />
             </a>
 
             {/* Desktop Navigation */}
@@ -223,6 +224,8 @@ const Index = () => {
               <Image 
                 src={contractorIndoor} 
                 alt="Contractor showing homeowner project details on tablet" 
+                width={500} 
+                height={500} 
                 className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
               <Card className="absolute -bottom-6 -left-6 bg-white shadow-xl max-w-[240px] hidden sm:block">
@@ -290,6 +293,8 @@ const Index = () => {
             <Image 
               src={contractorHandshake1} 
               alt="Contractor and homeowner shaking hands at property" 
+              width={500} 
+              height={256} 
               className="w-full h-64 object-cover"
             />
           </div>
@@ -297,6 +302,8 @@ const Index = () => {
             <Image 
               src={contractorHandshake2} 
               alt="SmartReno contractor meeting with satisfied homeowner" 
+              width={500} 
+              height={256} 
               className="w-full h-64 object-cover"
             />
           </div>
@@ -452,7 +459,7 @@ const Index = () => {
           <div className="grid gap-8 md:grid-cols-3 mb-8">
             <div>
               <a href="/" className="inline-block mb-4">
-                <Image src={smartRenoLogo} alt="SmartReno" className="h-10 w-auto" />
+                <Image src={smartRenoLogo} alt="SmartReno" width={160} height={40} className="h-10 w-auto" />
               </a>
               <p className="text-sm text-muted-foreground max-w-xs">
                 Renovations made simple for homeowners. Compare bids, manage milestones, and
